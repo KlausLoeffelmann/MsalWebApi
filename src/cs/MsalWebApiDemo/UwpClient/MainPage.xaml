@@ -1,0 +1,39 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UwpClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    x:Class="UwpClient.MainPage"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <Button x:Name="btnLogin" Content="Login (Microsoft or AAD)" 
+                Click="btnLogin_Click"
+                Margin="10,10,10,10"
+                Padding="10,10,10,10"
+                HorizontalAlignment="Center"/>
+
+            <Button x:Name="btnTestButton1" Content="Test 1" 
+                Click="btnTestButton1_Click"
+                Margin="10,10,10,10"
+                Padding="10,10,10,10"
+                HorizontalAlignment="Center"/>
+            <Button x:Name="btnTestButton2" Content="Test 2" 
+                Click="btnTestButton2_Click" 
+                Margin="10,10,10,10"
+                Padding="10,10,10,10"
+                HorizontalAlignment="Center"/>
+
+            <TextBlock x:Name="txtStatusLine"
+                       Margin="10,10,10,10"
+                       FontSize="24"
+                       Text="Statusline"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>
