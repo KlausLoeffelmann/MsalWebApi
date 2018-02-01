@@ -19,6 +19,8 @@ namespace UwpClient
     public sealed partial class MainPage : Page
     {
         private const string URL_PREFIX= "https://corewebapimsal.azurewebsites.net/api/";
+        private const string secret= "hzoyJQA2+=*honVIDY7875]";
+
 
         AuthenticationResult myAr;
         private SynchronizationContext mySyncContext = SynchronizationContext.Current;
@@ -51,9 +53,28 @@ namespace UwpClient
             }
         }
 
-        private void btnTestButton2_Click(object sender, RoutedEventArgs e)
+        private async void btnTestButton2_Click(object sender, RoutedEventArgs e)
         {
+            var httpClient = new System.Net.Http.HttpClient();
+            System.Net.Http.HttpResponseMessage response;
 
+            try
+            {
+                var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, URL_PREFIX + "authvalues");
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", myAr.AccessToken);
+                response = await httpClient.SendAsync(request);
+                var content = await response.Content.ReadAsStringAsync();
+                Debug.Print(content.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Debug.Print(ex.ToString());
+                if (Debugger.IsAttached)
+                {
+                    Debugger.Break();
+                }
+            }
         }
 
         /// <summary>
@@ -119,6 +140,12 @@ namespace UwpClient
                     Debug.Print(eInner.Message);
                 }
             }
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            SignOut();
+            txtStatusLine.Text = "Logged out.";
         }
 
         public async Task RefreshUserDataAsync(string token)

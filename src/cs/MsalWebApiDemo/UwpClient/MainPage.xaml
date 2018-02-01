@@ -18,16 +18,23 @@
                 Padding="10,10,10,10"
                 HorizontalAlignment="Center"/>
 
-            <Button x:Name="btnTestButton1" Content="Test 1" 
+            <Button x:Name="btnTestButton1" Content="Unauth'd WebApi Call" 
                 Click="btnTestButton1_Click"
                 Margin="10,10,10,10"
                 Padding="10,10,10,10"
                 HorizontalAlignment="Center"/>
-            <Button x:Name="btnTestButton2" Content="Test 2" 
+            <Button x:Name="btnTestButton2" Content="Auth'd WebApi Call" 
                 Click="btnTestButton2_Click" 
                 Margin="10,10,10,10"
                 Padding="10,10,10,10"
                 HorizontalAlignment="Center"/>
+
+            <Button x:Name="btnLogout" Content="Logout" 
+                Click="btnLogout_Click" 
+                Margin="10,10,10,10"
+                Padding="10,10,10,10"
+                HorizontalAlignment="Center"/>
+
 
             <TextBlock x:Name="txtStatusLine"
                        Margin="10,10,10,10"

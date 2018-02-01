@@ -25,7 +25,7 @@ namespace UwpClient
     {
 
         //Client ID (AndroidTestapp)
-        public static string ClientID = "59712ae4-2173-44f3-aff9-b01accc59a72";
+        public static string ClientID = "d6b95d1a-661f-4fd9-8bdd-9d93fb974990";
 
         public static PublicClientApplication PCA = null;
         public static string[] Scopes = { "User.Read", "Files.ReadWrite" };
